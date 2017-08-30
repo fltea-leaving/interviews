@@ -1,0 +1,26 @@
+vue MVVM(Model-View-ViewModle)框架 ，api 较 angular 简洁易懂，上手比较快
+
+---------------------------------------------------------------------
+                 -----------------
+                |  DOM Listeners  |
+  View  ----------------------------------->  Model
+                |  Data Bindings  |
+    |            -----------------              |
+    |              View Model                   |
+
+   Dom                  Vue                Plain JavaScript
+                                                Objects
+---------------------------------------------------------------------
+
+双向绑定 : DOM Listeners和Data Bindings
+
+vue 常用指令
+
+  v-model 双向绑定
+
+  v-if 条件渲染指令 --> 根据表达式的真假来删除和插入元素
+  v-else v-else元素跟在v-if后面
+  v-show 条件渲染指令 --> 用v-show指令的元素始终会被渲染到HTML，只是简单地为元素设置CSS的style属性
+  v-for  基于一个数组渲染一个列表  和JavaScript的遍历语法相似
+  v-bind 可以在其名称后面带一个参数，中间放一个冒号隔开，这个参数通常是HTML元素的特性（attribute）,可以缩写为一个冒号
+  v-on 监听DOM事件，语法和v-bind是类似的 v-on指令可以缩写为@符号

@@ -1,0 +1,38 @@
+    对echarts 进行重绘第一条折线面积图
+    for (var i = 0; i < 6; i++) {
+      this.echart.addData(
+        0, // 系列索引
+        Math.round(Math.random() * 100), // 新增数据
+        true, // 新增数据是否从队列头部插入
+        false // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
+      );
+    }
+
+    获取echarts 的zrnder实例
+
+    var zender = this.echart.getZrender();
+    var arr = zender.painter._domRoot.children;
+
+    获得 canvas
+    var canvas = arr[arr.length - 2];
+    var ctx = canvas.getContext('2d');
+
+    设置异或属性
+    ctx.globalCompositeOperation = "xor";
+
+    再对echarts 进行重绘第二条折线面积图
+
+    for (var i = 0; i < 6; i++) {
+
+      this.echart.addData(
+        1, // 系列索引
+        Math.round(Math.random() * 100), // 新增数据
+        true, // 新增数据是否从队列头部插入
+        false // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
+      );
+    }
+
+  ++++tips ：
+  只能两条，两条以上会有惊喜但不符合需求
+  如果不对第一条进行重绘，会存在一个方形面积图，然后才是异或图
+  折线的颜色会变成区域的颜色

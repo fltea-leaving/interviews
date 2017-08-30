@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .label {
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+        }*/
+
+        .label {
+            display: block;
+            width: 100px;
+            height: 19px;
+            text-align: justify;
+            text-align-last: justify;
+        }
+
+        .label:after {
+            display: inline-block;
+            content: '';
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <label class="label">肯尼</label>
+    <label class="label">啦啦啦</label>
+    <label class="label">第三方就会</label>
+    <label class="label">杀毒</label>
+    <label class="label">第三方科技</label> -->
+    <!-- 
+作者：野草
+链接：https://zhuanlan.zhihu.com/p/28257724
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 -->
+
+    <!-- <canvas></canvas> -->
+    <script>
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault()
+        })
+        var c = document.getElementsByTagName('canvas')[0],
+            x = c.getContext('2d'),
+            pr = window.devicePixelRatio || 1,
+            w = window.innerWidth,
+            h = window.innerHeight,
+            f = 90,
+            q,
+            m = Math,
+            r = 0,
+            u = m.PI * 2,
+            v = m.cos,
+            z = m.random
+        c.width = w * pr
+        c.height = h * pr
+        x.scale(pr, pr)
+        x.globalAlpha = 0.6
+
+        function i() {
+            x.clearRect(0, 0, w, h)
+            q = [{
+                x: 0,
+                y: h * .7 + f
+            }, {
+                x: 0,
+                y: h * .7 - f
+            }]
+            while (q[1].x < w + f) d(q[0], q[1])
+        }
+
+        function d(i, j) {
+            x.beginPath()
+            x.moveTo(i.x, i.y)
+            x.lineTo(j.x, j.y)
+            var k = j.x + (z() * 2 - 0.25) * f,
+                n = y(j.y)
+            x.lineTo(k, n)
+            x.closePath()
+            r -= u / -50
+            x.fillStyle = '#' + (v(r) * 127 + 128 << 16 | v(r + u / 3) * 127 + 128 << 8 | v(r + u / 3 * 2) * 127 + 128)
+                .toString(16)
+            x.fill()
+            q[0] = q[1]
+            q[1] = {
+                x: k,
+                y: n
+            }
+        }
+
+        function y(p) {
+            var t = p + (z() * 2 - 1.1) * f
+            return (t > h || t < 0) ? y(p) : t
+        }
+        document.onclick = i
+        document.ontouchstart = i
+        i()
+    </script>
+
+    <style>
+        .none {
+            display: none;
+        }
+
+        li {
+            line-height: 40px;
+        }
+
+        div {
+            border: 1px solid red;
+            overflow: hidden;
+            transition:transform 10s;
+            transform: translate3d(0,-100%,0)
+        }
+
+        div ul {
+        }
+        div ul:hover {
+            /* height: 500px; */
+            /* transform: translate3d(0,0,0) */
+        }
+
+        .an-top2bottom {
+            /* height: auto; */
+             /* transform: translate3d(0,0,0)  */
+        }
+    </style>
+    <button type="button" id="test"> 1212121</button>
+    <div class="none">
+        <ul>
+            <li class="forms-inner" data-popup="social">
+                <label>深圳社保</label>
+                <p>
+                    <span id="social">请选择</span>
+                    <i class="iconfont icon-xiangyou"></i>
+                </p>
+            </li>
+            <li class="forms-inner" data-popup="fund">
+                <label>深圳公积金</label>
+                <p>
+                    <span id="fund">请选择</span>
+                    <i class="iconfont icon-xiangyou"></i>
+                </p>
+            </li>
+            <li class="forms-inner" data-popup="wage">
+                <label>工资发放形式</label>
+                <p>
+                    <span id="wage">请选择</span>
+                    <i class="iconfont icon-xiangyou"></i>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var btn = document.querySelector('#test');
+        btn.onclick = function () {
+            console.log(this, document.querySelector('div'));
+            document.querySelector('div').style.display = 'block';
+            document.querySelector('div').className = 'an-top2bottom';
+            // document.querySelector('div').querySelector('ul').className = 'an-top2bottom';
+        };
+    </script>
+</body>
+
+</html>

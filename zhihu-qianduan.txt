@@ -1,0 +1,13 @@
+1.知乎上前端开发领域有哪些值得推荐的问答？
+    1.1  练习天猫首页
+    2  关于前端资源：ＨＴＭＬ CSS JAVASCRIPT
+    JavaScript MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
+    ES6 ：http://es6.ruanyifeng.com/
+    info :JavaScript :http://www.infoq.com/cn/javascript/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk
+    https://www.smashingmagazine.com/tag/javascript/
+    https://github.com/xufei/blog/issues
+    http://fex.baidu.com/articles/
+    http://www.cnblogs.com/sharpxiajun/
+    nodejs:https://cnodejs.org/topic/58eee565a92d341e48cfe7fc
+
+2.前端工程师应该对 HTTP 了解到什么程度？从哪些途径去熟悉更好？
